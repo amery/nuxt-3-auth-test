@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@pinia/nuxt',
+    '@trandaison/nuxt-3-auth',
   ],
   devtools: { enabled: true },
   srcDir: 'src',
