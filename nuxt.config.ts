@@ -1,3 +1,5 @@
+const isProduction = process.env.NODE_ENV === 'development';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -5,13 +7,16 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@trandaison/nuxt-3-auth',
   ],
-  devtools: { enabled: true },
+  devtools: { enabled: !isProduction },
   srcDir: 'src',
   compatibilityDate: '2024-11-01',
+  auth: {
+    debug: !isProduction,
+  },
   eslint: {
     checker: {
-      lintOnStart: true,
-      fix: true,
+      lintOnStart: !isProduction,
+      fix: !isProduction,
     },
     config: {
       stylistic: true,
