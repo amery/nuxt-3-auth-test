@@ -22,4 +22,9 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  pinia: {
+    storesDirs: [
+      './stores/**',
+    ],
+  },
 });
